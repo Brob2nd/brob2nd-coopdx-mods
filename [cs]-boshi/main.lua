@@ -17,7 +17,7 @@ csBoshi = {
         name = "Boshi",
         description = "''What're YOU lookin' at? If you wanna challenge me, you have to bring cookies!'' ----------------------- Boshi is a lone Blue Yoshi and the rival of Yoshi. Like many other yoshis, Boshi can speak only the Yoshi language, having a deeper voice than most others.",
         credits = "BlueKazoo, Brob2nd & ER1CK / VA: FunkyLion 'Yuyake'",
-        color = { r = 0, g = 102, b = 255 },
+        color = { r = 0, g = 100, b = 255 },
         model = smlua_model_util_get_id("boshi_geo"),
         forceChar = CT_MARIO,
         lifeIcon = get_texture_info("icon-boshi"),
@@ -104,8 +104,9 @@ local function on_character_select_load()
     _G.charSelect.credit_add(TEXT_PACK_NAME, "BlueKazoo", "Models")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "ER1CK", "Models/Recolorability")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "Squishy6094", "Code Rewrite")
-    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_VOICE_ACTOR, "FunkyLion", "Boshi")
-    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "xLuigiGamerx", "Boshi")
+    _G.charSelect.credit_add(TEXT_PACK_NAME, "FunkyLion", "Voice Actor")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "xLuigiGamerx", "Original Moveset Creator")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Baconator2558", "Tweaks and help.")
 
     CSloaded = true
 end
