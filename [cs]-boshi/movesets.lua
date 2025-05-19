@@ -85,7 +85,7 @@ function act_flutter(m)
     smlua_anim_util_set_animation(m.marioObj, BOSHI_ANIM_FLUTTER) -- Sets the animation
 
     m.marioBodyState.eyeState = MARIO_EYES_CLOSED ---@type MarioEyesGSCId Eye State
-    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.50, 6, 6) -- Height increases faster as the 1 second passes
+    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.50, 6, 6) -- Height increases faster as the 1.2 seconds passes
     m.marioObj.header.gfx.animInfo.animAccel = 32768 * 3 -- Animation Speed
 
     m.actionTimer = m.actionTimer + 1
