@@ -122,6 +122,13 @@ function boshi_update(m)
     if (m.prevAction & ACT_FLAG_AIR == 0 or m.action == ACT_WALL_KICK_AIR) and m.action & ACT_FLAG_AIR ~= 0 and flutterWhiteList[m.action] and m.controller.buttonDown & A_BUTTON ~= 0 and m.vel.y < 0 then
         set_mario_action(m, ACT_FLUTTER, 0)
     end
+    if m.action == ACT_GROUND_POUND and m.input & INPUT_B_PRESSED ~= 0 then
+        m.forwardVel = 30
+        m.faceAngle.y = m.intendedYaw
+        m.vel.y = 30
+        set_mario_action(m, ACT_DIVE, 0)
+        m.particleFlags = m.particleFlags | PARTICLE_DUST
+        end
 end
 
 hook_mario_action(ACT_FLUTTER, { every_frame = act_flutter })
