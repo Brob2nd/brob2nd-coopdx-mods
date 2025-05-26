@@ -64,9 +64,9 @@ local BOSHI_SOUND_FLUTTER = audio_sample_load("boshi_flutter.ogg") -- Load audio
 ---@param m MarioState
 function act_flutter(m)
 
-    -- End flutter after 1.2 seconds
-    if m.actionTimer >= 36 or (m.input & INPUT_A_DOWN) == 0 then
-        if m.actionTimer < 36 then
+    -- End flutter after 1.19 seconds
+    if m.actionTimer >= 35 or (m.input & INPUT_A_DOWN) == 0 then
+        if m.actionTimer < 35 then
             audio_sample_stop(BOSHI_SOUND_FLUTTER) -- Stop sample after letting go of A
         end
         return set_mario_action(m, ACT_FREEFALL, 0)
@@ -85,7 +85,7 @@ function act_flutter(m)
     smlua_anim_util_set_animation(m.marioObj, BOSHI_ANIM_FLUTTER) -- Sets the animation
 
     m.marioBodyState.eyeState = MARIO_EYES_CLOSED ---@type MarioEyesGSCId Eye State
-    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.50, 6, 6) -- Height increases faster as the 1.2 seconds passes
+    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.5, 6, 6) -- Height increases faster as the 1.2 seconds passes
     m.marioObj.header.gfx.animInfo.animAccel = 32768 * 3 -- Animation Speed
 
     m.actionTimer = m.actionTimer + 1
@@ -124,9 +124,9 @@ function boshi_update(m)
     end
     -- Ground Pound Cancel
     if m.action == ACT_GROUND_POUND and m.input & INPUT_B_PRESSED ~= 0 then
-        m.forwardVel = 30
+        m.forwardVel = 33
         m.faceAngle.y = m.intendedYaw
-        m.vel.y = 30
+        m.vel.y = 11
         set_mario_action(m, ACT_DIVE, 0)
         m.particleFlags = m.particleFlags | PARTICLE_DUST
     end
@@ -144,8 +144,8 @@ function boshi_on_set_action(m)
 
     -- wall kick height based on how fast boshi is going
     if m.action == ACT_WALL_KICK_AIR and m.prevAction ~= ACT_HOLDING_POLE and m.prevAction ~= ACT_CLIMBING_POLE then
-        m.vel.y = m.vel.y * 0.9
-        m.vel.y = m.vel.y + e.averageForwardVel * 0.9
+        m.vel.y = m.vel.y * 0.95
+        m.vel.y = m.vel.y + e.averageForwardVel * 0.95
         return
     end
         -- less height on jumps
@@ -157,7 +157,7 @@ function boshi_on_set_action(m)
                 m.pos.y = m.pos.y + 10
             end
         elseif m.action == ACT_SIDE_FLIP then
-            m.vel.y = m.vel.y * 0.9
+            m.vel.y = m.vel.y * 0.95
     
             -- prevent from getting stuck on platform
             if m.marioObj.platform ~= nil then
