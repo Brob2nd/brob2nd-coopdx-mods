@@ -1,6 +1,6 @@
 -- name: [CS] \\#0066FF\\Boshi
--- description: [CS] \\#0066FF\\Boshi\n\n\\#FFFFFF\\This mod adds \\#0066FF\\Boshi \\#FFFFFF\\from \nSuper Mario RPG into sm64coopdx!\n\n\\#F54E59\\Model Credits: \nBlueKazoo, Brobgonal Second, Sharen, XLuigiGamerX & ER1CK\n\n\\#5FF54E\\Voice Actors: \nAngelicMiracles "Yuyake" \n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
-local TEXT_PACK_NAME = "[CS] Boshi"
+-- description: [CS] \\#0066FF\\Boshi\n\n\\#FFFFFF\\This mod adds \\#0066FF\\Boshi \\#FFFFFF\\from \nSuper Mario RPG: Legend of the\nSeven Stars into sm64coopdx!\n\n\\#F54E59\\Model Credits: \nBlueKazoo, Brobgonal Second & ER1CK\n\n\\#5FF54E\\Voice Actors: \nAngelicMiracles "Yuyake"\n\n\\#0066FF\\Moveset Credits:\nXLuigiGamerX, Squishy6094, JerThePear & Baconator2558\n\n\\#ffff00\\Animation credits:\nSharen\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
+local TEXT_PACK_NAME = "Boshi"
 
 if not _G.charSelectExists then
     djui_popup_create("[CS]\\#0066FF\\Boshi \\#ffffa0\\requires\nCharacter Select to be enabled.\n\nPlease rehost with it enabled.", 4)
@@ -85,8 +85,7 @@ csBoshi = {
     },
 }    
 
-local TEXT_VOICE_ACTOR = " (Voice Actors)"
-local TEXT_MOVESET     = " (Movesets)"
+local TEXT_MOVESET     = " (Moveset)"
 local CSloaded = false
 local function on_character_select_load()
     for i = 1, #csBoshi do
