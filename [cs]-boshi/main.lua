@@ -106,7 +106,9 @@ local function on_character_select_load()
     _G.charSelect.credit_add(TEXT_PACK_NAME, "Squishy6094", "Code Rewrite")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "FunkyLion", "Voice Actor")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "xLuigiGamerx", "Original Moveset Creator")
-    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Baconator2558", "Tweaks and help.")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Baconator2558", "Tweaks and help")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Squishy6094", "Ground Pound Cancel")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "JerThePear", "Ground Pound Jump")
 
     CSloaded = true
 end
@@ -117,21 +119,6 @@ local function on_character_sound(m, sound)
         if _G.charSelect.character_get_voice(m) == csBoshi[i].voices then return _G.charSelect.voice.sound(m, sound) end
     end
 end
-
---Used for the final Extra Character
---[[local function mario_update(m)
-    if not CSloaded then return end
-    if m.action == ACT_WALKING and _G.charSelect.character_get_current_number(m.playerIndex) == csBoshi[10].tablePos then
-        m.marioBodyState.torsoAngle.x = 0
-        m.marioBodyState.torsoAngle.z = 0
-        --results in double step sounds when going at the usual 32 speed (sigh)
-        m.marioObj.header.gfx.animInfo.animAccel = m.marioObj.header.gfx.animInfo.animAccel * 0.85
-    end
-    for i = 1, #csBoshi do
-        if _G.charSelect.character_get_voice(m) == csBoshi[i].voices then return _G.charSelect.voice.snore(m) end
-    end
-end
-]]
 
 hook_event(HOOK_ON_MODS_LOADED, on_character_select_load)
 hook_event(HOOK_CHARACTER_SOUND, on_character_sound)

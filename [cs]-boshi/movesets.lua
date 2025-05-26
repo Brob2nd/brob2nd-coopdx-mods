@@ -41,7 +41,7 @@ end
 -- Boshi Flutter --
 -------------------
 
--- Flutterable actions, these don't match the DS flutterable actions
+-- Flutterable actions, these don't match the DS flutterable actions, they also include as many act/jump related stuff as possible that can be done and isn't buggy.
 local flutterWhiteList = {
     [ACT_JUMP] = true,
     [ACT_DOUBLE_JUMP] = true,
@@ -122,13 +122,19 @@ function boshi_update(m)
     if (m.prevAction & ACT_FLAG_AIR == 0 or m.action == ACT_WALL_KICK_AIR) and m.action & ACT_FLAG_AIR ~= 0 and flutterWhiteList[m.action] and m.controller.buttonDown & A_BUTTON ~= 0 and m.vel.y < 0 then
         set_mario_action(m, ACT_FLUTTER, 0)
     end
+    -- Ground Pound Cancel
     if m.action == ACT_GROUND_POUND and m.input & INPUT_B_PRESSED ~= 0 then
         m.forwardVel = 30
         m.faceAngle.y = m.intendedYaw
         m.vel.y = 30
         set_mario_action(m, ACT_DIVE, 0)
         m.particleFlags = m.particleFlags | PARTICLE_DUST
-        end
+    end
+    -- Ground Pound jump
+    if m.action == ACT_GROUND_POUND_LAND and (m.input & INPUT_A_PRESSED) ~= 0 then
+        set_mario_action(m, ACT_TRIPLE_JUMP, 0)
+        m.vel.y = m.vel.y - 4
+    end
 end
 
 hook_mario_action(ACT_FLUTTER, { every_frame = act_flutter })
