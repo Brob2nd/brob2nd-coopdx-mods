@@ -54,7 +54,8 @@ local flutterWhiteList = {
     [ACT_STEEP_JUMP] = true,
     [ACT_WATER_JUMP] = true,
     [ACT_BURNING_JUMP] = true,
-    [ACT_TOP_OF_POLE_JUMP] = true
+    [ACT_TOP_OF_POLE_JUMP] = true,
+    [ACT_BURNING_FALL] = true
 }
 
 ACT_FLUTTER = allocate_mario_action(ACT_FLAG_AIR | ACT_FLAG_ALLOW_VERTICAL_WIND_ACTION | ACT_GROUP_AIRBORNE)
@@ -149,7 +150,7 @@ function boshi_on_set_action(m)
         return
     end
         -- less height on jumps
-        if m.action == ACT_JUMP or m.action == ACT_DOUBLE_JUMP or m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP or m.action == ACT_STEEP_JUMP or m.action == ACT_RIDING_SHELL_JUMP or m.action == ACT_BACKFLIP or m.action == ACT_WALL_KICK_AIR or m.action == ACT_LONG_JUMP then
+        if m.action == ACT_JUMP or m.action == ACT_DOUBLE_JUMP or m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP or m.action == ACT_STEEP_JUMP or m.action == ACT_RIDING_SHELL_JUMP or m.action == ACT_BACKFLIP or m.action == ACT_WALL_KICK_AIR or m.action == ACT_LONG_JUMP or m.action == ACT_TOP_OF_POLE_JUMP or m.action == ACT_BURNING_JUMP or m.action == ACT_WATER_JUMP then
             m.vel.y = m.vel.y * 0.95
     
             -- prevent from getting stuck on platform
