@@ -55,7 +55,8 @@ local flutterWhiteList = {
     [ACT_WATER_JUMP] = true,
     [ACT_BURNING_JUMP] = true,
     [ACT_TOP_OF_POLE_JUMP] = true,
-    [ACT_BURNING_FALL] = true
+    [ACT_BURNING_FALL] = true,
+    [ACT_THROWN_FORWARD] = true
 }
 
 ACT_FLUTTER = allocate_mario_action(ACT_FLAG_AIR | ACT_FLAG_ALLOW_VERTICAL_WIND_ACTION | ACT_GROUP_AIRBORNE)
@@ -131,7 +132,7 @@ function boshi_update(m)
         set_mario_action(m, ACT_DIVE, 0)
         m.particleFlags = m.particleFlags | PARTICLE_DUST
     end
-    -- Ground Pound jump
+    -- Ground Pound Jump
     if m.action == ACT_GROUND_POUND_LAND and (m.input & INPUT_A_PRESSED) ~= 0 then
         set_mario_action(m, ACT_TRIPLE_JUMP, 0)
         m.vel.y = m.vel.y - 4
@@ -150,7 +151,7 @@ function boshi_on_set_action(m)
         return
     end
         -- less height on jumps
-        if m.action == ACT_JUMP or m.action == ACT_DOUBLE_JUMP or m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP or m.action == ACT_STEEP_JUMP or m.action == ACT_RIDING_SHELL_JUMP or m.action == ACT_BACKFLIP or m.action == ACT_WALL_KICK_AIR or m.action == ACT_LONG_JUMP or m.action == ACT_TOP_OF_POLE_JUMP or m.action == ACT_BURNING_JUMP or m.action == ACT_WATER_JUMP then
+        if m.action == ACT_JUMP or m.action == ACT_DOUBLE_JUMP or m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP or m.action == ACT_STEEP_JUMP or m.action == ACT_RIDING_SHELL_JUMP or m.action == ACT_BACKFLIP or m.action == ACT_WALL_KICK_AIR or m.action == ACT_LONG_JUMP or m.action == ACT_TOP_OF_POLE_JUMP or m.action == ACT_BURNING_JUMP or m.action == ACT_WATER_JUMP or m.action == ACT_THROWN_FORWARD then
             m.vel.y = m.vel.y * 0.95
     
             -- prevent from getting stuck on platform
