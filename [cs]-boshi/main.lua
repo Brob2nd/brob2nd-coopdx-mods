@@ -16,7 +16,7 @@ csBoshi = {
     {
         name = "Boshi",
         description = "''What're YOU lookin' at? If you wanna challenge me, you have to bring cookies!'' ----------------------- Boshi is a lone Blue Yoshi and the rival of Yoshi. Like many other yoshis, Boshi can speak only the Yoshi language, having a deeper voice than most others.",
-        credits = "BlueKazoo, Brob2nd & ER1CK / VA: FunkyLion 'Yuyake'",
+        credits = "BlueKazoo, Brob2nd, ER1CK & WBmarioo / VA: FunkyLion 'Yuyake'",
         color = { r = 0, g = 100, b = 255 },
         model = smlua_model_util_get_id("boshi_geo"),
         forceChar = CT_MARIO,
@@ -35,7 +35,7 @@ csBoshi = {
             [GLOVES] = { r = 0xFF, g = 0xFF, b = 0xFF },
             [SHOES]  = { r = 0x89, g = 0x00, b = 0x0F },
             [HAIR]   = { r = 0xFF, g = 0x66, b = 0x00 },
-            [SKIN]   = { r = 0xFF, g = 0xDE, b = 0x39 },
+            [SKIN]   = { r = 0x89, g = 0x00, b = 0x0F },
             [CAP]    = { r = 0x00, g = 0x66, b = 0xFF },
             [EMBLEM] = { r = 0xFF, g = 0x00, b = 0x00 },
         },
@@ -86,6 +86,7 @@ csBoshi = {
 }    
 
 local TEXT_MOVESET     = " (Moveset)"
+local TEXT_MODEL       = " (Model)"
 local CSloaded = false
 local function on_character_select_load()
     for i = 1, #csBoshi do
@@ -100,11 +101,14 @@ local function on_character_select_load()
 
     _G.charSelect.credit_add(TEXT_PACK_NAME, "Brobgonal Second", "Lead Dev")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "Sharen", "Animation")
-    _G.charSelect.credit_add(TEXT_PACK_NAME, "BlueKazoo", "Models")
-    _G.charSelect.credit_add(TEXT_PACK_NAME, "ER1CK", "Models/Recolorability")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "Squishy6094", "Code Rewrite")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "FunkyLion", "Voice Actor")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "BlueKazoo", "Original Model Creator")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "Brobgonal Second", "Recolorability")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "ER1CK", "Recolorability")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "WBmarioo", "Model Improver/Recolorability")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "xLuigiGamerx", "Original Moveset Creator")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Brobgonal Second", "Modified Moveset")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Baconator2558", "Tweaks and help")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Squishy6094", "Ground Pound Cancel")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "JerThePear", "Ground Pound Jump")
