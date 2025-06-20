@@ -23,12 +23,12 @@ csBoshi = {
         lifeIcon = get_texture_info("icon-boshi"),
         camScale = 1,
         offset = 0,
-        --  caps = {
-        --  normal = smlua_model_util_get_id("yoshi_player_cap_geo"),
-        --  wing = smlua_model_util_get_id("yoshi_player_wing_cap_geo"),
-        --  metal = smlua_model_util_get_id("yoshi_player_metal_cap_geo"),
-        --  metalWing = smlua_model_util_get_id("yoshi_player_metal_wing_cap_geo")
-        -- },
+        caps = {
+            normal = smlua_model_util_get_id("boshi_cap_geo"),
+            wing = smlua_model_util_get_id("boshi_wing_cap_geo"),
+            metal = smlua_model_util_get_id("boshi_metal_cap_geo"),
+            metalWing = smlua_model_util_get_id("boshi_metal_wing_cap_geo")
+        },
         palette = {
             [PANTS]  = { r = 0xFF, g = 0x00, b = 0xFF },
             [SHIRT]  = { r = 0x00, g = 0x66, b = 0xFF },
