@@ -55,8 +55,7 @@ local flutterWhiteList = {
     [ACT_WATER_JUMP] = true,
     [ACT_BURNING_JUMP] = true,
     [ACT_TOP_OF_POLE_JUMP] = true,
-    [ACT_BURNING_FALL] = true,
-    [ACT_THROWN_FORWARD] = true
+    [ACT_BURNING_FALL] = true
 }
 
 ACT_FLUTTER = allocate_mario_action(ACT_FLAG_AIR | ACT_FLAG_ALLOW_VERTICAL_WIND_ACTION | ACT_GROUP_AIRBORNE)
