@@ -65,9 +65,9 @@ local BOSHI_SOUND_FLUTTER = audio_sample_load("boshi_flutter.ogg") -- Load audio
 ---@param m MarioState
 function act_flutter(m)
 
-    -- End flutter after 1.19 seconds
-    if m.actionTimer >= 35 or (m.input & INPUT_A_DOWN) == 0 then
-        if m.actionTimer < 35 then
+    -- End flutter after 1.1 seconds
+    if m.actionTimer >= 33 or (m.input & INPUT_A_DOWN) == 0 then
+        if m.actionTimer < 33 then
             audio_sample_stop(BOSHI_SOUND_FLUTTER) -- Stop sample after letting go of A
         end
         return set_mario_action(m, ACT_FREEFALL, 0)
@@ -86,7 +86,7 @@ function act_flutter(m)
     smlua_anim_util_set_animation(m.marioObj, BOSHI_ANIM_FLUTTER) -- Sets the animation
 
     m.marioBodyState.eyeState = MARIO_EYES_CLOSED ---@type MarioEyesGSCId Eye State
-    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.5, 6, 6) -- Height increases faster as the 1.2 seconds passes
+    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.5, 6, 6) -- Height increases faster as the 1.1 seconds passes
     m.marioObj.header.gfx.animInfo.animAccel = 32768 * 3 -- Animation Speed
 
     m.actionTimer = m.actionTimer + 1
