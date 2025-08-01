@@ -16,7 +16,7 @@ csBoshi = {
     {
         name = "Boshi",
         description = "''What're YOU lookin' at? If you wanna challenge me, you have to bring cookies!'' ------------------------ Boshi is a lone Blue Yoshi that really loves eating Yoshi Cookies, he's also Yoshi's rival. Like many other yoshis, Boshi can speak only the Yoshi language, having a deeper voice than most others.",
-        credits = "BlueKazoo, Brob2nd, ER1CK & WBmarioo / VA: FunkyLion 'Yuyake'",
+        credits = "BlueKazoo, Brob2nd & WBmarioo / VA: FunkyLion 'Yuyake'",
         color = { r = 0, g = 100, b = 255 },
         model = smlua_model_util_get_id("boshi_geo"),
         forceChar = CT_MARIO,
