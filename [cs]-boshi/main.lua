@@ -1,5 +1,5 @@
 -- name: [CS] \\#0066FF\\Boshi
--- description: [CS] \\#0066FF\\Boshi\n\n\\#FFFFFF\\This mod adds \\#0066FF\\Boshi \\#FFFFFF\\from \nSuper Mario RPG: Legend of the\nSeven Stars into sm64coopdx!\n\n\\#F54E59\\Model Credits: \nBlueKazoo, Brobgonal Second & ER1CK\n\n\\#5FF54E\\Voice Actors: \nAngelicMiracles "Yuyake"\n\n\\#0066FF\\Moveset Credits:\nXLuigiGamerX, Squishy6094, JerThePear & Baconator2558\n\n\\#ffff00\\Animation credits:\nSharen\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
+-- description: [CS] \\#0066FF\\Boshi\n\n\\#FFFFFF\\This mod adds \\#0066FF\\Boshi \\#FFFFFF\\from \nSuper Mario RPG: Legend of the\nSeven Stars into sm64coopdx!\n\n\\#F54E59\\Model Credits:\nBlueKazoo, Brobgonal Second\nWBmarioo and ER1CK\n\n\\#0066FF\\Moveset Credits:\nXLuigiGamerX, Squishy6094, JerThePear & Baconator2558\n\n\\#00FFFF\\Misc Credits:\n\\#5FF54E\\AngelicMiracles "Yuyake",\n\\#ffff00\\Sharen & \\#5436ad\\JillyJane\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
 local TEXT_PACK_NAME = "Boshi"
 
 if not _G.charSelectExists then
@@ -15,8 +15,8 @@ csBoshi = {
     -----------
     {
         name = "Boshi",
-        description = "''What're YOU lookin' at? If you wanna challenge me, you have to bring cookies!'' ------------------------ Boshi is a lone Blue Yoshi that really loves eating Yoshi Cookies, he's also Yoshi's rival. Like many other yoshis, Boshi can speak only the Yoshi language, having a deeper voice than most others.",
-        credits = "BlueKazoo, Brob2nd & WBmarioo / VA: FunkyLion",
+        description = "A lone Blue Yoshi who really loves eating Yoshi Cookies and has a deeper voice than most other Yoshi's, he's also Yoshi's rival! He may seem tough on the outside with his studded collar and mirrored shades, but he has a weakness for cookies that may unsaddle him in the end.",
+        credits = "BlueKazoo & WBmarioo / VA: FunkyLion",
         color = { r = 0, g = 100, b = 255 },
         model = smlua_model_util_get_id("boshi_geo"),
         forceChar = CT_MARIO,
@@ -103,10 +103,11 @@ local function on_character_select_load()
     _G.charSelect.credit_add(TEXT_PACK_NAME, "Sharen", "Animation")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "Squishy6094", "Code Rewrite")
     _G.charSelect.credit_add(TEXT_PACK_NAME, "FunkyLion", "Voice Actor")
+    _G.charSelect.credit_add(TEXT_PACK_NAME, "Chars64 & JillyJane", "Icons")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "BlueKazoo", "Original Model Creator")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "Brobgonal Second", "Recolorability")
+    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "WBmarioo", "Model Decomp/Revamp")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "ER1CK", "Recolorability")
-    _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MODEL, "WBmarioo", "Model Improver/Recolorability")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "xLuigiGamerx", "Original Moveset Creator")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Brobgonal Second", "Modified Moveset")
     _G.charSelect.credit_add(TEXT_PACK_NAME..TEXT_MOVESET, "Baconator2558", "Tweaks and help")
