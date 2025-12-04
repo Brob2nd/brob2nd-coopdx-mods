@@ -123,7 +123,7 @@ function boshi_update(m)
     end
     -- Ground Pound Cancel
     if m.action == ACT_GROUND_POUND and m.input & INPUT_B_PRESSED ~= 0 then
-        m.forwardVel = 36
+        m.forwardVel = 33
         m.faceAngle.y = m.intendedYaw
         m.vel.y = 12
         set_mario_action(m, ACT_DIVE, 0)
