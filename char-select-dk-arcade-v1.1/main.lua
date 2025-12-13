@@ -1,5 +1,5 @@
--- name: [CS] DK Arcade Pack V1.1
--- description: [CS] DK Arcade Pack V1.1\n\nThis mod adds Jumpman and Stanley from the Donkey Kong, Donkey Kong Jr. and Donkey Kong 3 arcade videogames\ninto sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, TheGreatMario64,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
+-- name: [CS] DK Arcade Pack
+-- description: [CS] DK Arcade Pack v1.2\n\nThis mod adds Jumpman and Stanley from the Donkey Kong, Donkey Kong Jr. and Donkey Kong 3 arcade videogames\ninto sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, TheGreatMario64,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
 
 local globalModName = "DK Arcade Pack"
 if not _G.charSelectExists then
@@ -74,114 +74,262 @@ local VOICETABLE_STANLEY = {
     [CHAR_SOUND_YAWNING] = "jumpman_pause.ogg",
 }
 
-local PALETTE_JUMPMAN = {
-    [PANTS]  = { r = 0xFF, g = 0x00, b = 0x00 }, --FF0000
-    [SHIRT]  = { r = 0x4F, g = 0x5A, b = 0xFF }, --4F5AFF
-    [GLOVES] = { r = 0xFF, g = 0xFF, b = 0xFF }, --FFFFFF
-    [SHOES]  = { r = 0x00, g = 0x00, b = 0x00 }, --000000
-    [HAIR]   = { r = 0x00, g = 0x00, b = 0x00 }, --000000
-    [SKIN]   = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [CAP]    = { r = 0xFF, g = 0x00, b = 0x00 }, --FF0000
-    [EMBLEM] = { r = 0xDC, g = 0x9F, b = 0xFF }  --DC9FFF
+local PALETTES_JUMPMAN = {
+    {
+        name = "Default",
+        [PANTS]  = "ff0000",
+        [SHIRT]  = "4f5aff",
+        [GLOVES] = "ffffff",
+        [SHOES]  = "000000",
+        [HAIR]   = "000000",
+        [SKIN]   = "fec179",
+        [CAP]    = "ff0000",
+        [EMBLEM] = "dc9fff"
+    },
+    {
+        name = "Alternate",
+        [PANTS]  = "c02408",
+        [SHIRT]  = "373de3",
+        [GLOVES] = "ebebff",
+        [SHOES]  = "000000",
+        [HAIR]   = "000000",
+        [SKIN]   = "e99768",
+        [CAP]    = "c02408",
+        [EMBLEM] = "dc9fff"
+    },
+    {
+       name = "Japenese Artwork",
+       [PANTS]  = "d02d32",
+       [SHIRT]  = "0186c4",
+       [GLOVES] = "edf1f2",
+       [SHOES]  = "09130d",
+       [HAIR]   = "09130d",
+       [SKIN]   = "edf1f2",
+       [CAP]    = "d02d32",
+       [EMBLEM] = "edf1f2"
+    },
+    {
+       name = "Arcade",
+       [PANTS]  =  "ff0000",
+       [SHIRT]  =  "0000aa",
+       [GLOVES] =  "ffb855",
+       [SHOES]  =  "0000aa",
+       [HAIR]   =  "0000aa",
+       [SKIN]   =  "ffb855",
+       [CAP]    =  "ff0000",
+       [EMBLEM] =  "ffb855"
+    },
+    {
+       name = "Atari 2600",
+       [PANTS]  =  "c84848",
+       [SHIRT]  =  "c84848",
+       [GLOVES] =  "c84848",
+       [SHOES]  =  "4288b0",
+       [HAIR]   =  "000000",
+       [SKIN]   =  "ececec",
+       [CAP]    =  "c84848",
+       [EMBLEM] =  "ececec"
+    },
+    {
+       name = "Atari (8-bit)",
+       [PANTS]  =  "641900",
+       [SHIRT]  =  "434bff",
+       [GLOVES] =  "d3a900",
+       [SHOES]  =  "434bff",
+       [HAIR]   =  "434bff",
+       [SKIN]   =  "d3a900",
+       [CAP]    =  "641900",
+       [EMBLEM] =  "d3a900"
+    },
+    {
+       name = "Commodore VIC-20",
+       [PANTS]  =  "941701",
+       [SHIRT]  =  "941701",
+       [GLOVES] =  "e97969",
+       [SHOES]  =  "52c6d4",
+       [HAIR]   =  "000000",
+       [SKIN]   =  "e97969",
+       [CAP]    =  "941701",
+       [EMBLEM] =  "e97969"
+    },
+    {
+       name = "DOS",
+       [PANTS]  =  "a80000",
+       [SHIRT]  =  "00a800",
+       [GLOVES] =  "a85400",
+       [SHOES]  =  "a85400",
+       [HAIR]   =  "00a800",
+       [SKIN]   =  "a85400",
+       [CAP]    =  "a80000",
+       [EMBLEM] =  "a85400"
+    },
+    {
+       name = "Apple II",
+       [PANTS]  =  "f25e00",
+       [SHIRT]  =  "0da1ff",
+       [GLOVES] =  "fffffe",
+       [SHOES]  =  "fffffe",
+       [HAIR]   =  "0da1ff",
+       [SKIN]   =  "fffffe",
+       [CAP]    =  "f25e00",
+       [EMBLEM] =  "fffffe"
+    },
+    {
+       name = "Commodore 64 (AS)",
+       [PANTS]  =  "933a4c",
+       [SHIRT]  =  "4f44d8",
+       [GLOVES] =  "fbfb8b",
+       [SHOES]  =  "4f44d8",
+       [HAIR]   =  "4f44d8",
+       [SKIN]   =  "fbfb8b",
+       [CAP]    =  "933a4c",
+       [EMBLEM] =  "fbfb8b"
+    },
+    {
+       name = "Commodore 64 (OS)",
+       [PANTS]  =  "933a4c",
+       [SHIRT]  =  "4f44d8",
+       [GLOVES] =  "ef839f",
+       [SHOES]  =  "4f44d8",
+       [HAIR]   =  "4f44d8",
+       [SKIN]   =  "ef839f",
+       [CAP]    =  "933a4c",
+       [EMBLEM] =  "ef839f"
+    },
+    {
+       name = "ColecoVision",
+       [PANTS]  =  "933a4c",
+       [SHIRT]  =  "1818de",
+       [GLOVES] =  "dedede",
+       [SHOES]  =  "1818de",
+       [HAIR]   =  "1818de",
+       [SKIN]   =  "dedede",
+       [CAP]    =  "933a4c",
+       [EMBLEM] =  "dedede"
+    },
+    {
+       name = "TI-99/4A",
+       [PANTS]  =  "f87878",
+       [SHIRT]  =  "5050e8",
+       [GLOVES] =  "f87878",
+       [SHOES]  =  "5050e8",
+       [HAIR]   =  "5050e8",
+       [SKIN]   =  "f87878",
+       [CAP]    =  "f87878",
+       [EMBLEM] =  "f87878"
+    },
+    {
+       name = "NES",
+       [PANTS]  =  "f83800",
+       [SHIRT]  =  "0000bf",
+       [GLOVES] =  "f0d0b0",
+       [SHOES]  =  "0000bf",
+       [HAIR]   =  "0000bf",
+       [SKIN]   =  "f0d0B0",
+       [CAP]    =  "f83800",
+       [EMBLEM] =  "f0d0b0"
+    },
+    {
+       name = "MSX",
+       [PANTS]  =  "b02020",
+       [SHIRT]  =  "2020f7",
+       [GLOVES] =  "b0b0b0",
+       [SHOES]  =  "2020f7",
+       [HAIR]   =  "2020f7",
+       [SKIN]   =  "b0b0b0",
+       [CAP]    =  "b02020",
+       [EMBLEM] =  "b0b0b0"
+    },
+    {
+       name = "Amstrad CPC",
+       [PANTS]  =  "ff0000",
+       [SHIRT]  =  "0000ff",
+       [GLOVES] =  "ff6666",
+       [SHOES]  =  "0000ff",
+       [HAIR]   =  "0000ff",
+       [SKIN]   =  "ff6666",
+       [CAP]    =  "ff0000",
+       [EMBLEM] =  "ff6666"
+    },
+    {
+       name = "Atari 7800",
+       [PANTS]  =  "e44020",
+       [SHIRT]  =  "003876",
+       [GLOVES] =  "ffb8ec",
+       [SHOES]  =  "003876",
+       [HAIR]   =  "003876",
+       [SKIN]   =  "ffb8ec",
+       [CAP]    =  "e44020",
+       [EMBLEM] =  "ffb8ec"
+    },
 }
-
-local PALETTE_JUMPMAN_ALT = {
-    [PANTS]  = { r = 0xC0, g = 0x24, b = 0x08 }, --C02408
-    [SHIRT]  = { r = 0x37, g = 0x3D, b = 0xE3 }, --373DE3
-    [GLOVES] = { r = 0xEB, g = 0xEB, b = 0xFF }, --EBEBFF
-    [SHOES]  = { r = 0x00, g = 0x00, b = 0x00 }, --000000
-    [HAIR]   = { r = 0x00, g = 0x00, b = 0x00 }, --000000
-    [SKIN]   = { r = 0xE9, g = 0x97, b = 0x68 }, --E99768
-    [CAP]    = { r = 0xC0, g = 0x24, b = 0x08 }, --C02408
-    [EMBLEM] = { r = 0xDC, g = 0x9F, b = 0xFF }  --DC9FFF
-}
-
-local PALETTE_JUMPMAN_JP_ARTWORK = {
-    [PANTS]  = { r = 0xD0, g = 0x2D, b = 0x32 }, --D02D32
-    [SHIRT]  = { r = 0x01, g = 0x86, b = 0xC4 }, --0186C4
-    [GLOVES] = { r = 0xED, g = 0xF1, b = 0xF2 }, --EDF1F2
-    [SHOES]  = { r = 0x09, g = 0x13, b = 0x0D }, --09130D
-    [HAIR]   = { r = 0x09, g = 0x13, b = 0x0D }, --09130D
-    [SKIN]   = { r = 0xED, g = 0xF1, b = 0xF2 }, --3DF1F2
-    [CAP]    = { r = 0xD0, g = 0x2D, b = 0x32 }, --D02D32
-    [EMBLEM] = { r = 0xED, g = 0xF1, b = 0xF2 }  --3DF1F2
-}
-
-local PALETTE_JUMPMAN_CLASSIC = {
-    [PANTS]  = { r = 0xF8, g = 0x38, b = 0x00 }, --F83800
-    [SHIRT]  = { r = 0x00, g = 0x00, b = 0xBF }, --0000BF
-    [GLOVES] = { r = 0xF0, g = 0xD0, b = 0xB0 }, --F0D0B0
-    [SHOES]  = { r = 0x00, g = 0x00, b = 0xBF }, --0000BF
-    [HAIR]   = { r = 0x00, g = 0x00, b = 0xBF }, --0000BF
-    [SKIN]   = { r = 0xF0, g = 0xD0, b = 0xB0 }, --F0D0B0
-    [CAP]    = { r = 0xF8, g = 0x38, b = 0x00 }, --F83800
-    [EMBLEM] = { r = 0xF0, g = 0xD0, b = 0xB0 }  --F0D0B0
-}
-
-local PALETTE_STANLEY = {
-    [PANTS]  = { r = 0xFF, g = 0xFF, b = 0xFF }, --FFFFFF
-    [SHIRT]  = { r = 0x00, g = 0x00, b = 0xFF }, --0000FF
-    [GLOVES] = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [SHOES]  = { r = 0x72, g = 0x1C, b = 0x0E }, --721C0E
-    [HAIR]   = { r = 0x89, g = 0x3E, b = 0x00 }, --893E00
-    [SKIN]   = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [CAP]    = { r = 0x00, g = 0x00, b = 0xFF }, --0000FF
-    [EMBLEM] = { r = 0xFF, g = 0x00, b = 0x00 }  --FF0000
-}
-
-local PALETTE_STANLEY_ARCADE = {
-    [PANTS]  = { r = 0xCE, g = 0x00, b = 0x00 }, --CE0000
-    [SHIRT]  = { r = 0x00, g = 0x00, b = 0xB9 }, --0000B9
-    [GLOVES] = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [SHOES]  = { r = 0xFF, g = 0x9E, b = 0x00 }, --FF9E00
-    [HAIR]   = { r = 0x89, g = 0x3E, b = 0x00 }, --893E00
-    [SKIN]   = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [CAP]    = { r = 0xCE, g = 0x00, b = 0x00 }, --CE0000
-    [EMBLEM] = { r = 0xCE, g = 0x00, b = 0x00 }  --CE0000
-}
-
-local PALETTE_STANLEY_SUPER_SPRAYER = {
-    [PANTS]  = { r = 0xCE, g = 0x00, b = 0x00 }, --CE0000
-    [SHIRT]  = { r = 0xFF, g = 0x9E, b = 0x00 }, --FF9E00
-    [GLOVES] = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [SHOES]  = { r = 0x52, g = 0x06, b = 0x00 }, --520600
-    [HAIR]   = { r = 0x89, g = 0x3E, b = 0x00 }, --893E00
-    [SKIN]   = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [CAP]    = { r = 0xFF, g = 0x9E, b = 0x00 }, --FF9E00
-    [EMBLEM] = { r = 0xCE, g = 0x00, b = 0x00 }  --CE0000
-}
-
-local PALETTE_STANLEY_ARTWORKGW = {
-    [PANTS]  = { r = 0x00, g = 0x60, b = 0xFF }, --0060FF
-    [SHIRT]  = { r = 0xFF, g = 0xA9, b = 0x00 }, --FFA900
-    [GLOVES] = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [SHOES]  = { r = 0x72, g = 0x1C, b = 0x0E }, --721C0E
-    [HAIR]   = { r = 0x89, g = 0x3E, b = 0x00 }, --893E00
-    [SKIN]   = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [CAP]    = { r = 0xCE, g = 0x00, b = 0x00 }, --CE0000
-    [EMBLEM] = { r = 0xCE, g = 0x00, b = 0x00 }  --CE0000
-}
-
-local PALETTE_STANLEY_COMMERCIAL = {
-    [PANTS]  = { r = 0xE7, g = 0xD2, b = 0xA6 }, --E7D2A6
-    [SHIRT]  = { r = 0xB1, g = 0x35, b = 0x50 }, --B13550
-    [GLOVES] = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [SHOES]  = { r = 0x71, g = 0x4c, b = 0x42 }, --714c42
-    [HAIR]   = { r = 0x73, g = 0x06, b = 0x00 }, --730600
-    [SKIN]   = { r = 0xFE, g = 0xC1, b = 0x79 }, --FEC179
-    [CAP]    = { r = 0xFF, g = 0xFF, b = 0xFF }, --FFFFFF
-    [EMBLEM] = { r = 0xFF, g = 0xFF, b = 0xFF }  --FFFFFF
-}
-
-local PALETTE_STANLEY_DAI_GYAKUSHU = {
-    [PANTS]  = { r = 0xFF, g = 0x00, b = 0x00 }, --FF0000
-    [SHIRT]  = { r = 0x00, g = 0x00, b = 0xFF }, --0000FF
-    [GLOVES] = { r = 0xFF, g = 0xFF, b = 0x00 }, --FFFF00
-    [SHOES]  = { r = 0xFF, g = 0xFF, b = 0x00 }, --FFFF00
-    [HAIR]   = { r = 0xFF, g = 0x00, b = 0x00 }, --FF0000
-    [SKIN]   = { r = 0xFF, g = 0xFF, b = 0x00 }, --FFFF00
-    [CAP]    = { r = 0xFF, g = 0x00, b = 0x00 }, --FF0000
-    [EMBLEM] = { r = 0xFF, g = 0x00, b = 0x00 }  --FF0000
+local PALETTES_STANLEY = {
+    {
+       name = "Default (NES)",
+       [PANTS]  = "ffffff",
+       [SHIRT]  = "0000ff",
+       [GLOVES] = "fec179",
+       [SHOES]  = "721c0e",
+       [HAIR]   = "893e00",
+       [SKIN]   = "fec179",
+       [CAP]    = "0000ff",
+       [EMBLEM] = "ff0000"
+   },
+   {
+       name = "Arcade",
+       [PANTS]  = "ce0000",
+       [SHIRT]  = "0000b9",
+       [GLOVES] = "fec179",
+       [SHOES]  = "FF9e00",
+       [HAIR]   = "893e00",
+       [SKIN]   = "fec179",
+       [CAP]    = "ce0000",
+       [EMBLEM] = "ce0000"
+   },
+   {   
+       name = "Super Sprayer",
+       [PANTS]  = "ce0000",
+       [SHIRT]  = "ff9e00",
+       [GLOVES] = "fec179",
+       [SHOES]  = "520600",
+       [HAIR]   = "893e00",
+       [SKIN]   = "fec179",
+       [CAP]    = "ff9E00",
+       [EMBLEM] = "ce0000"
+   },
+   {
+       name = "Game & Watch",
+       [PANTS]  = "e7d2a6",
+       [SHIRT]  = "b13550",
+       [GLOVES] = "fec179",
+       [SHOES]  = "714c42",
+       [HAIR]   = "730600",
+       [SKIN]   = "fec179",
+       [CAP]    = "ffffff",
+       [EMBLEM] = "ffffff"
+   }, 
+   {
+       name = "Game & Watch (AD)",
+       [PANTS]  = "0060ff",
+       [SHIRT]  = "ffa900",
+       [GLOVES] = "fec179",
+       [SHOES]  = "721c0e",
+       [HAIR]   = "893e00",
+       [SKIN]   = "fec179",
+       [CAP]    = "ce0000",
+       [EMBLEM] = "ce0000"
+   },
+   {
+       name = "Dai Gyakushu",
+       [PANTS]  = "ff0000",
+       [SHIRT]  = "0000ff",
+       [GLOVES] = "ffff00",
+       [SHOES]  = "ffff00",
+       [HAIR]   = "ff0000",
+       [SKIN]   = "ffff00",
+       [CAP]    = "ff0000",
+       [EMBLEM] = "ff0000"
+   }
 }
 
 local CT_JUMPMAN = _G.charSelect.character_add("Jumpman", {"Jumpman is a plumber from New York,", "which first appeared in the videogame 'Donkey Kong'.", "", "One day, a lady called 'Pauline' got kidnapped", "by a monkey called 'Donkey Kong', and he has taken", "her to a dangerous construction site, and now,", "Jumpman has to climb up the dangerous construction", "site to defeat Donkey Kong and rescue her!"}, "AlexXRGames, Brob2nd & TheGreatMario64", { r = 255, g = 0, b = 80 }, E_MODEL_JUMPMAN, CT_MARIO, TEX_JUMPMAN)
@@ -194,38 +342,17 @@ _G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_1, VOICETABLE_STANLEY)
 _G.charSelect.character_add_voice(E_MODEL_JUMPMAN_ALT_2, VOICETABLE_JUMPMAN)
 _G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_2, VOICETABLE_STANLEY)
 -- Jumpman's Preset Palettes
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN, PALETTE_JUMPMAN)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN, PALETTE_JUMPMAN_ALT)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN, PALETTE_JUMPMAN_JP_ARTWORK)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN, PALETTE_JUMPMAN_CLASSIC)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_1, PALETTE_JUMPMAN_ALT)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_1, PALETTE_JUMPMAN)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_1, PALETTE_JUMPMAN_JP_ARTWORK)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_1, PALETTE_JUMPMAN_CLASSIC)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_2, PALETTE_JUMPMAN_ALT)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_2, PALETTE_JUMPMAN)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_2, PALETTE_JUMPMAN_JP_ARTWORK)
-_G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_2, PALETTE_JUMPMAN_CLASSIC)
+for i = 1, #PALETTES_JUMPMAN do
+        _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
+        _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_1, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
+        _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_2, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
+end
 -- Stanley's Preset Palettes
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTE_STANLEY)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTE_STANLEY_ARCADE)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTE_STANLEY_SUPER_SPRAYER)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTE_STANLEY_COMMERCIAL)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTE_STANLEY_ARTWORKGW)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTE_STANLEY_DAI_GYAKUSHU)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTE_STANLEY)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTE_STANLEY_ARCADE)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTE_STANLEY_SUPER_SPRAYER)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTE_STANLEY_COMMERCIAL)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTE_STANLEY_ARTWORKGW)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTE_STANLEY_DAI_GYAKUSHU)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTE_STANLEY)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTE_STANLEY_ARCADE)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTE_STANLEY_SUPER_SPRAYER)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTE_STANLEY_COMMERCIAL)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTE_STANLEY_ARTWORKGW)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTE_STANLEY_DAI_GYAKUSHU)
-
+for i = 1, #PALETTES_STANLEY do
+_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
+_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
+_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
+end
 local voiceTables = {
     [VOICETABLE_JUMPMAN] = true,
     [VOICETABLE_STANLEY] = true
@@ -252,7 +379,7 @@ end
 hook_event(HOOK_MARIO_UPDATE, mario_update)
 hook_event(HOOK_CHARACTER_SOUND, character_sound)
 
-if _G.charSelect.credit_add then
+if  _G.charSelect.credit_add then
     _G.charSelect.credit_add(globalModName, "AlexXRGames", "Jumpman's default model")
     _G.charSelect.credit_add(globalModName, "ThatGurlTilly", "Tilly's Jumpman Pack's creator")
     _G.charSelect.credit_add(globalModName, "BlueKazoo", "Stanley's models")
