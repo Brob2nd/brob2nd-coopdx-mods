@@ -98,7 +98,7 @@ local PALETTES_JUMPMAN = {
         [EMBLEM] = "dc9fff"
     },
     {
-       name = "Japenese Artwork",
+       name = "JP Artwork",
        [PANTS]  = "d02d32",
        [SHIRT]  = "0186c4",
        [GLOVES] = "edf1f2",
@@ -142,7 +142,7 @@ local PALETTES_JUMPMAN = {
        [EMBLEM] =  "d3a900"
     },
     {
-       name = "Commodore VIC-20",
+       name = "C. VIC-20",
        [PANTS]  =  "941701",
        [SHIRT]  =  "941701",
        [GLOVES] =  "e97969",
@@ -175,7 +175,7 @@ local PALETTES_JUMPMAN = {
        [EMBLEM] =  "fffffe"
     },
     {
-       name = "Commodore 64 (AS)",
+       name = "C. 64 (AS)",
        [PANTS]  =  "933a4c",
        [SHIRT]  =  "4f44d8",
        [GLOVES] =  "fbfb8b",
@@ -186,7 +186,7 @@ local PALETTES_JUMPMAN = {
        [EMBLEM] =  "fbfb8b"
     },
     {
-       name = "Commodore 64 (OS)",
+       name = "C. 64 (OS)",
        [PANTS]  =  "933a4c",
        [SHIRT]  =  "4f44d8",
        [GLOVES] =  "ef839f",
