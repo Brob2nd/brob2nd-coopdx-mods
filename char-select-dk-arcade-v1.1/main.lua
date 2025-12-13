@@ -265,7 +265,7 @@ local PALETTES_JUMPMAN = {
 }
 local PALETTES_STANLEY = {
     {
-       name = "Default (NES)",
+       name = "Default",
        [PANTS]  = "ffffff",
        [SHIRT]  = "0000ff",
        [GLOVES] = "fec179",
@@ -276,7 +276,7 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "ff0000"
    },
    {
-       name = "Arcade",
+       name = "Arcade (SM64)",
        [PANTS]  = "ce0000",
        [SHIRT]  = "0000b9",
        [GLOVES] = "fec179",
@@ -287,7 +287,7 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "ce0000"
    },
    {   
-       name = "Super Sprayer",
+       name = "S. Sprayer 64",
        [PANTS]  = "ce0000",
        [SHIRT]  = "ff9e00",
        [GLOVES] = "fec179",
@@ -309,7 +309,7 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "ffffff"
    }, 
    {
-       name = "Game & Watch (AD)",
+       name = "G&W (AD)",
        [PANTS]  = "0060ff",
        [SHIRT]  = "ffa900",
        [GLOVES] = "fec179",
@@ -318,6 +318,39 @@ local PALETTES_STANLEY = {
        [SKIN]   = "fec179",
        [CAP]    = "ce0000",
        [EMBLEM] = "ce0000"
+   },
+   {
+       name = "Arcade",
+       [PANTS]  = "eb0809",
+       [SHIRT]  = "020161",
+       [GLOVES] = "f69745",
+       [SHOES]  = "f6b416",
+       [HAIR]   = "640304",
+       [SKIN]   = "f69745",
+       [CAP]    = "eb0809",
+       [EMBLEM] = "eb0809"
+   },
+   {
+       name = "Super Sprayer",
+       [PANTS]  = "eb0709",
+       [SHIRT]  = "f8d317",
+       [GLOVES] = "f69745",
+       [SHOES]  = "530105",
+       [HAIR]   = "630303",
+       [SKIN]   = "f69745",
+       [CAP]    = "eb0709",
+       [EMBLEM] = "eb0709"
+   },
+   {
+       name = "NES",
+       [PANTS]  = "fcfcfc",
+       [SHIRT]  = "2038ec",
+       [GLOVES] = "fc9838",
+       [SHOES]  = "2038ec",
+       [HAIR]   = "2038ec",
+       [SKIN]   = "fc9838",
+       [CAP]    = "fcfcfc",
+       [EMBLEM] = "fcfcfc"
    },
    {
        name = "Dai Gyakushu",
