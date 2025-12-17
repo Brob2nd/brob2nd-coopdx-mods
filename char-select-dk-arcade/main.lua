@@ -353,6 +353,17 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "fcfcfc"
    },
    {
+       name = "NES (Alternate)",
+       [PANTS]  = "fff8ff",
+       [SHIRT]  = "0088ff",
+       [GLOVES] = "ffa04f",
+       [SHOES]  = "0088ff",
+       [HAIR]   = "0088ff",
+       [SKIN]   = "ffa04f",
+       [CAP]    = "fff8ff",
+       [EMBLEM] = "fff8ff"
+   },
+   {
        name = "Dai Gyakushu",
        [PANTS]  = "ff0000",
        [SHIRT]  = "0000ff",
@@ -368,19 +379,20 @@ local PALETTES_STANLEY = {
 local CT_JUMPMAN = _G.charSelect.character_add("Jumpman", {"Jumpman is a plumber from New York,", "which first appeared in the videogame 'Donkey Kong'.", "", "One day, a lady called 'Pauline' got kidnapped", "by a monkey called 'Donkey Kong', and he has taken", "her to a dangerous construction site, and now,", "Jumpman has to climb up the dangerous construction", "site to defeat Donkey Kong and rescue her!"}, "AlexXRGames, Brob2nd & TheGreatMario64", { r = 255, g = 0, b = 80 }, E_MODEL_JUMPMAN, CT_MARIO, TEX_JUMPMAN)
 local CT_STANLEY = _G.charSelect.character_add("Stanley", {"Stanley, also known as Stanley the Bugman,", "is a bug exterminator who first appeared in the", "Game & Watch game Green House.", "In that game, Stanley uses his", "spray gun to defeat hungry pests.", "He later appeared in the Donkey Kong Arcade franchise", "as the protagonist of the game Donkey Kong 3,", "in which he battles with Donkey Kong and", "several insects in a greenhouse with his spray."}, "BlueKazoo & Brobgonal Second", { r = 0, g = 111, b = 222 }, E_MODEL_STANLEY, CT_MARIO, TEX_STANLEY)
 
+-- Character's Voices.
 _G.charSelect.character_add_voice(E_MODEL_JUMPMAN, VOICETABLE_JUMPMAN)
 _G.charSelect.character_add_voice(E_MODEL_STANLEY, VOICETABLE_STANLEY)
 _G.charSelect.character_add_voice(E_MODEL_JUMPMAN_ALT_1, VOICETABLE_JUMPMAN)
 _G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_1, VOICETABLE_STANLEY)
 _G.charSelect.character_add_voice(E_MODEL_JUMPMAN_ALT_2, VOICETABLE_JUMPMAN)
 _G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_2, VOICETABLE_STANLEY)
--- Jumpman's Preset Palettes
+-- Jumpman's Preset Palettes.
 for i = 1, #PALETTES_JUMPMAN do
         _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
         _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_1, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
         _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_2, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
 end
--- Stanley's Preset Palettes
+-- Stanley's Preset Palettes.
 for i = 1, #PALETTES_STANLEY do
 _G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
 _G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
@@ -411,33 +423,34 @@ end
 
 hook_event(HOOK_MARIO_UPDATE, mario_update)
 hook_event(HOOK_CHARACTER_SOUND, character_sound)
+-- Character Categorys.
+_G.charSelect.character_set_category(CT_JUMPMAN, "DK Arcade")
+_G.charSelect.character_set_category(CT_STANLEY, "DK Arcade")
+-- Mod Credits.
+_G.charSelect.credit_add(globalModName, "AlexXRGames", "Jumpman's model")
+_G.charSelect.credit_add(globalModName, "ThatGurlTilly", "Tilly's Jumpman Pack")
+_G.charSelect.credit_add(globalModName, "BlueKazoo", "Stanley's models")
+_G.charSelect.credit_add(globalModName, "TGM64", "Recolorability/Model")
+_G.charSelect.credit_add(globalModName, "Squishy6094", "Added Alt System")
+_G.charSelect.credit_add(globalModName, "Brobgonal Second", "Recolorability")
+_G.charSelect.credit_add(globalModName, "ER1CK", "Recolorability fixes")
 
-if  _G.charSelect.credit_add then
-    _G.charSelect.credit_add(globalModName, "AlexXRGames", "Jumpman's default model")
-    _G.charSelect.credit_add(globalModName, "ThatGurlTilly", "Tilly's Jumpman Pack's creator")
-    _G.charSelect.credit_add(globalModName, "BlueKazoo", "Stanley's models")
-    _G.charSelect.credit_add(globalModName, "TGM64", "Recolorability/Model/Texture help")
-    _G.charSelect.credit_add(globalModName, "Squishy6094", "Added the Alt System")
-    _G.charSelect.credit_add(globalModName, "Brobgonal Second", "Recolorability")
-    _G.charSelect.credit_add(globalModName, "ER1CK", "Recolorability fixes on Stanley")
-end
-
-    -- table of skins
-    local SKINTABLE_JUMPMAN = {
-        { model = E_MODEL_JUMPMAN_ALT_1,  desc = { "Jumpman is a plumber from New York,", "which first appeared in the videogame 'Donkey Kong'.", "", "One day, a lady called 'Pauline' got kidnapped", "by a monkey called 'Donkey Kong', and he has taken", "her to a dangerous construction site, and now,", "Jumpman has to climb up the dangerous construction", "site to defeat Donkey Kong and rescue her!"}, credit = "ThatGurlTilly",         color = { r = 255, g = 0, b = 80 } },
+-- Table of Skins.
+local SKINTABLE_JUMPMAN = {
+    { model = E_MODEL_JUMPMAN_ALT_1,  desc = { "Jumpman is a plumber from New York,", "which first appeared in the videogame 'Donkey Kong'.", "", "One day, a lady called 'Pauline' got kidnapped", "by a monkey called 'Donkey Kong', and he has taken", "her to a dangerous construction site, and now,", "Jumpman has to climb up the dangerous construction", "site to defeat Donkey Kong and rescue her!"}, credit = "ThatGurlTilly",         color = { r = 255, g = 0, b = 80 } },
         { model = E_MODEL_JUMPMAN_ALT_2,  desc = { "Jumpman is a plumber from New York,", "which first appeared in the videogame 'Donkey Kong'.", "", "One day, a lady called 'Pauline' got kidnapped", "by a monkey called 'Donkey Kong', and he has taken", "her to a dangerous construction site, and now,", "Jumpman has to climb up the dangerous construction", "site to defeat Donkey Kong and rescue her!"},  credit = "ThatGurlTilly",         color = { r = 255, g = 0, b = 80 } }
-    }
+}
 
-    for index, alt in ipairs(SKINTABLE_JUMPMAN) do
-        _G.charSelect.character_add_costume(CT_JUMPMAN, nil, alt.desc, alt.credit, alt.color, alt.model, nil, nil, nil, nil)
+for index, alt in ipairs(SKINTABLE_JUMPMAN) do
+    _G.charSelect.character_add_costume(CT_JUMPMAN, nil, alt.desc, alt.credit, alt.color, alt.model, nil, nil, nil, nil)
 end
 
-    -- table of skins
-    local SKINTABLE_STANLEY = {
-        { model = E_MODEL_STANLEY_ALT_1,  desc = { "Stanley, also known as Stanley the Bugman,", "is a bug exterminator who first appeared in the", "Game & Watch game Green House.", "In that game, Stanley uses his", "spray gun to defeat hungry pests.", "He later appeared in the Donkey Kong Arcade franchise", "as the protagonist of the game Donkey Kong 3,", "in which he battles with Donkey Kong and", "several insects in a greenhouse with his spray." }, credit = "BlueKazoo & Brobgonal Second",        color = { r = 0, g = 111, b = 222 } },
-        { model = E_MODEL_STANLEY_ALT_2,  desc = { "Stanley, also known as Stanley the Bugman,", "is a bug exterminator who first appeared in the", "Game & Watch game Green House.", "In that game, Stanley uses his", "spray gun to defeat hungry pests.", "He later appeared in the Donkey Kong Arcade franchise", "as the protagonist of the game Donkey Kong 3,", "in which he battles with Donkey Kong and", "several insects in a greenhouse with his spray." },  credit = "BlueKazoo, Brob2nd & ER1CK",         color = { r = 0, g = 111, b = 222 } }
-    }
+-- Table of Skins.
+local SKINTABLE_STANLEY = {
+    { model = E_MODEL_STANLEY_ALT_1,  desc = { "Stanley, also known as Stanley the Bugman,", "is a bug exterminator who first appeared in the", "Game & Watch game Green House.", "In that game, Stanley uses his", "spray gun to defeat hungry pests.", "He later appeared in the Donkey Kong Arcade franchise", "as the protagonist of the game Donkey Kong 3,", "in which he battles with Donkey Kong and", "several insects in a greenhouse with his spray." }, credit = "BlueKazoo & Brobgonal Second",        color = { r = 0, g = 111, b = 222 } },
+    { model = E_MODEL_STANLEY_ALT_2,  desc = { "Stanley, also known as Stanley the Bugman,", "is a bug exterminator who first appeared in the", "Game & Watch game Green House.", "In that game, Stanley uses his", "spray gun to defeat hungry pests.", "He later appeared in the Donkey Kong Arcade franchise", "as the protagonist of the game Donkey Kong 3,", "in which he battles with Donkey Kong and", "several insects in a greenhouse with his spray." },  credit = "BlueKazoo, Brob2nd & ER1CK",         color = { r = 0, g = 111, b = 222 } }
+}
 
-    for index, alt in ipairs(SKINTABLE_STANLEY) do
-        _G.charSelect.character_add_costume(CT_STANLEY, nil, alt.desc, alt.credit, alt.color, alt.model, nil, alt.icon, nil, nil)
-    end
+for index, alt in ipairs(SKINTABLE_STANLEY) do
+    _G.charSelect.character_add_costume(CT_STANLEY, nil, alt.desc, alt.credit, alt.color, alt.model, nil, alt.icon, nil, nil)
+end
