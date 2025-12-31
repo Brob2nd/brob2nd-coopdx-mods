@@ -1,12 +1,15 @@
 -- name: [CS] DK Arcade Pack
--- description: [CS] DK Arcade Pack v1.2\n\nThis mod adds Jumpman and Stanley from the Donkey Kong arcade videogame\ntrilogy into sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, AvereySmartGuy,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
+-- description: [CS] DK Arcade Pack v1.21\n\nThis mod adds Jumpman and Stanley from the Donkey Kong arcade videogame\ntrilogy into sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, AvereySmartGuy,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
 
-local globalModName = "DK Arcade Pack"
+local TEXT_MOD_NAME = "DK Arcade Pack"
+
+-- Stops mod from loading if Character Select isn't on
 if not _G.charSelectExists then
-    djui_popup_create("\\#ffffdc\\\n"..globalModName.."\nRequires the Character Select Mod\nto use as a Library!\n\nPlease turn on the Character Select Mod and Restart the Room!", 6)
-    return
+    djui_popup_create("\\#ffffdc\\\n"..TEXT_MOD_NAME.."\nRequires the Character Select Mod\nto use as a Library!\n\nPlease turn on the Character Select Mod and Restart the Room!", 6)
+    return 0
 end
 
+-- Models
 local E_MODEL_JUMPMAN = smlua_model_util_get_id("jumpman_geo")
 local E_MODEL_STANLEY = smlua_model_util_get_id("stanley_geo")
 local E_MODEL_JUMPMAN_ALT_1 = smlua_model_util_get_id("jumpman_alt_geo")
@@ -14,6 +17,7 @@ local E_MODEL_STANLEY_ALT_1 = smlua_model_util_get_id("stanley_alt_geo")
 local E_MODEL_JUMPMAN_ALT_2 = smlua_model_util_get_id("jumpman_alt2_geo")
 local E_MODEL_STANLEY_ALT_2 = smlua_model_util_get_id("stanley_alt2_geo")
 
+-- Textures
 local TEX_JUMPMAN = get_texture_info("jumpman-icon")
 local TEX_STANLEY = get_texture_info("stanley-icon")
 
@@ -27,6 +31,7 @@ local VOICETABLE_JUMPMAN = {
     [CHAR_SOUND_HAHA_2] = "jumpman_kick.ogg",
     [CHAR_SOUND_HERE_WE_GO] = "jumpman_herewego.ogg",
     [CHAR_SOUND_HOOHOO] = "jumpman_thwomp.ogg",
+    [CHAR_SOUND_LETS_A_GO] = "jumpman_kick.ogg",
     [CHAR_SOUND_MAMA_MIA] = "jumpman_kick.ogg",
     [CHAR_SOUND_OKEY_DOKEY] = "jumpman_kick.ogg",
     [CHAR_SOUND_ON_FIRE] = "jumpman_pause.ogg",
@@ -55,6 +60,7 @@ local VOICETABLE_STANLEY = {
     [CHAR_SOUND_HAHA_2] = "stanley_haha.ogg",
     [CHAR_SOUND_HERE_WE_GO] = "stanley_yahoo.ogg",
     [CHAR_SOUND_HOOHOO] = "stanley_hoohoo.ogg",
+    [CHAR_SOUND_LETS_A_GO] = "stanley_yahoo.ogg",
     [CHAR_SOUND_MAMA_MIA] = "stanley_mamamia.ogg",
     [CHAR_SOUND_OKEY_DOKEY] = "stanley_yahoo.ogg",
     [CHAR_SOUND_ON_FIRE] = "jumpman_pause.ogg",
@@ -268,7 +274,7 @@ local PALETTES_STANLEY = {
        name = "Default",
        [PANTS]  = "ffffff",
        [SHIRT]  = "0000ff",
-       [GLOVES] = "fec179",
+       [GLOVES] = "ffffff",
        [SHOES]  = "721c0e",
        [HAIR]   = "893e00",
        [SKIN]   = "fec179",
@@ -279,7 +285,7 @@ local PALETTES_STANLEY = {
        name = "Arcade (SM64)",
        [PANTS]  = "ce0000",
        [SHIRT]  = "0000b9",
-       [GLOVES] = "fec179",
+       [GLOVES] = "ffffff",
        [SHOES]  = "FF9e00",
        [HAIR]   = "893e00",
        [SKIN]   = "fec179",
@@ -290,7 +296,7 @@ local PALETTES_STANLEY = {
        name = "S. Sprayer 64",
        [PANTS]  = "ce0000",
        [SHIRT]  = "ff9e00",
-       [GLOVES] = "fec179",
+       [GLOVES] = "ffffff",
        [SHOES]  = "520600",
        [HAIR]   = "893e00",
        [SKIN]   = "fec179",
@@ -301,7 +307,7 @@ local PALETTES_STANLEY = {
        name = "Game & Watch",
        [PANTS]  = "e7d2a6",
        [SHIRT]  = "b13550",
-       [GLOVES] = "fec179",
+       [GLOVES] = "ffffff",
        [SHOES]  = "714c42",
        [HAIR]   = "730600",
        [SKIN]   = "fec179",
@@ -312,7 +318,7 @@ local PALETTES_STANLEY = {
        name = "G&W (AD)",
        [PANTS]  = "0060ff",
        [SHIRT]  = "ffa900",
-       [GLOVES] = "fec179",
+       [GLOVES] = "ffffff",
        [SHOES]  = "721c0e",
        [HAIR]   = "893e00",
        [SKIN]   = "fec179",
@@ -353,7 +359,7 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "fcfcfc"
    },
    {
-       name = "NES (Alternate)",
+       name = "NES (Alt)",
        [PANTS]  = "fff8ff",
        [SHIRT]  = "0088ff",
        [GLOVES] = "ffa04f",
@@ -379,61 +385,53 @@ local PALETTES_STANLEY = {
 local CT_JUMPMAN = _G.charSelect.character_add("Jumpman", {"Jumpman is a plumber from New York,", "which first appeared in the videogame 'Donkey Kong'.", "", "One day, a lady called 'Pauline' got kidnapped", "by a monkey called 'Donkey Kong', and he has taken", "her to a dangerous construction site, and now,", "Jumpman has to climb up the dangerous construction", "site to defeat Donkey Kong and rescue her!"}, "AlexXRGames, Brob2nd & TheGreatMario64", { r = 255, g = 0, b = 80 }, E_MODEL_JUMPMAN, CT_MARIO, TEX_JUMPMAN)
 local CT_STANLEY = _G.charSelect.character_add("Stanley", {"Stanley, also known as Stanley the Bugman,", "is a bug exterminator who first appeared in the", "Game & Watch game Green House.", "In that game, Stanley uses his", "spray gun to defeat hungry pests.", "He later appeared in the Donkey Kong Arcade franchise", "as the protagonist of the game Donkey Kong 3,", "in which he battles with Donkey Kong and", "several insects in a greenhouse with his spray."}, "BlueKazoo & Brobgonal Second", { r = 0, g = 111, b = 222 }, E_MODEL_STANLEY, CT_MARIO, TEX_STANLEY)
 
--- Character's Voices.
-_G.charSelect.character_add_voice(E_MODEL_JUMPMAN, VOICETABLE_JUMPMAN)
-_G.charSelect.character_add_voice(E_MODEL_STANLEY, VOICETABLE_STANLEY)
-_G.charSelect.character_add_voice(E_MODEL_JUMPMAN_ALT_1, VOICETABLE_JUMPMAN)
-_G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_1, VOICETABLE_STANLEY)
-_G.charSelect.character_add_voice(E_MODEL_JUMPMAN_ALT_2, VOICETABLE_JUMPMAN)
-_G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_2, VOICETABLE_STANLEY)
+local CSloaded = false
+local function on_character_select_load()
 -- Jumpman's Preset Palettes.
-for i = 1, #PALETTES_JUMPMAN do
+    for i = 1, #PALETTES_JUMPMAN do
         _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
         _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_1, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
         _G.charSelect.character_add_palette_preset(E_MODEL_JUMPMAN_ALT_2, PALETTES_JUMPMAN[i], PALETTES_JUMPMAN[i].name)
-end
+    end
 -- Stanley's Preset Palettes.
-for i = 1, #PALETTES_STANLEY do
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
-_G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
-end
-local voiceTables = {
-    [VOICETABLE_JUMPMAN] = true,
-    [VOICETABLE_STANLEY] = true
-}
-
---- @param m MarioState
-local function mario_update(m)
-    if is_player_active(m) == 0 then return end
-    local voiceTable = charSelect.character_get_voice(m)
-    if voiceTables[voiceTable] then
-        return charSelect.voice.snore(m)
+    for i = 1, #PALETTES_STANLEY do
+    _G.charSelect.character_add_palette_preset(E_MODEL_STANLEY, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
+    _G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_1, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
+    _G.charSelect.character_add_palette_preset(E_MODEL_STANLEY_ALT_2, PALETTES_STANLEY[i], PALETTES_STANLEY[i].name)
     end
-end
-
---- @param m MarioState
---- @param sound CharacterSound
-local function character_sound(m, sound)
-    local voiceTable = charSelect.character_get_voice(m)
-    if voiceTables[voiceTable] then
-        return charSelect.voice.sound(m, sound)
-    end
-end
-
-hook_event(HOOK_MARIO_UPDATE, mario_update)
-hook_event(HOOK_CHARACTER_SOUND, character_sound)
+-- Character's Voices.
+    _G.charSelect.character_add_voice(E_MODEL_JUMPMAN, VOICETABLE_JUMPMAN)
+    _G.charSelect.character_add_voice(E_MODEL_STANLEY, VOICETABLE_STANLEY)
+    _G.charSelect.character_add_voice(E_MODEL_JUMPMAN_ALT_1, VOICETABLE_JUMPMAN)
+    _G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_1, VOICETABLE_STANLEY)
+    _G.charSelect.character_add_voice(E_MODEL_JUMPMAN_ALT_2, VOICETABLE_JUMPMAN)
+    _G.charSelect.character_add_voice(E_MODEL_STANLEY_ALT_2, VOICETABLE_STANLEY)
 -- Character Categorys.
-_G.charSelect.character_set_category(CT_JUMPMAN, "DK Arcade")
-_G.charSelect.character_set_category(CT_STANLEY, "DK Arcade")
+    _G.charSelect.character_set_category(CT_JUMPMAN, "DK Arcade")
+    _G.charSelect.character_set_category(CT_STANLEY, "DK Arcade")
 -- Mod Credits.
-_G.charSelect.credit_add(globalModName, "AlexXRGames", "Jumpman's model")
-_G.charSelect.credit_add(globalModName, "ThatGurlTilly", "Tilly's Jumpman Pack")
-_G.charSelect.credit_add(globalModName, "BlueKazoo", "Stanley's models")
-_G.charSelect.credit_add(globalModName, "AvereySmartGuy", "Revamped Model")
-_G.charSelect.credit_add(globalModName, "Squishy6094", "Added Alt System")
-_G.charSelect.credit_add(globalModName, "Brobgonal Second", "Recolorability")
-_G.charSelect.credit_add(globalModName, "ER1CK", "Recolorability fixes")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "AlexXRGames", "Jumpman's model")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "ThatGurlTilly", "Tilly's Jumpman Pack")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "BlueKazoo", "Stanley's models")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "AvereySmartGuy", "Revamped Model")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "Squishy6094", "Added Alt System")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "Brobgonal Second", "Recolorability")
+    _G.charSelect.credit_add(TEXT_MOD_NAME, "ER1CK", "Recolorability fixes")
+
+    CSloaded = true
+end
+
+local function on_character_sound(m, sound)
+    if not CSloaded then return end
+    if _G.charSelect.character_get_voice(m) == VOICETABLE_JUMPMAN then return _G.charSelect.voice.sound(m, sound) end
+    if _G.charSelect.character_get_voice(m) == VOICETABLE_STANLEY then return _G.charSelect.voice.sound(m, sound) end
+end
+
+local function on_character_snore(m)
+    if not CSloaded then return end
+    if _G.charSelect.character_get_voice(m) == VOICETABLE_JUMPMAN then return _G.charSelect.voice.snore(m) end
+    if _G.charSelect.character_get_voice(m) == VOICETABLE_STANLEY then return _G.charSelect.voice.snore(m) end
+end
 
 -- Table of Skins.
 local SKINTABLE_JUMPMAN = {
@@ -454,3 +452,7 @@ local SKINTABLE_STANLEY = {
 for index, alt in ipairs(SKINTABLE_STANLEY) do
     _G.charSelect.character_add_costume(CT_STANLEY, nil, alt.desc, alt.credit, alt.color, alt.model, nil, alt.icon, nil, nil)
 end
+
+hook_event(HOOK_ON_MODS_LOADED, on_character_select_load)
+hook_event(HOOK_CHARACTER_SOUND, on_character_sound)
+hook_event(HOOK_MARIO_UPDATE, on_character_snore)
