@@ -101,7 +101,7 @@ local PALETTES_JUMPMAN = {
         [HAIR]   = "000000",
         [SKIN]   = "e99768",
         [CAP]    = "c02408",
-        [EMBLEM] = "dc9fff"
+        [EMBLEM] = "dc8fff"
     },
     {
        name = "JP Artwork",
