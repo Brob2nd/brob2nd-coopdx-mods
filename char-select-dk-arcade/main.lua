@@ -440,7 +440,7 @@ local SKINTABLE_JUMPMAN = {
 }
 
 for index, alt in ipairs(SKINTABLE_JUMPMAN) do
-    _G.charSelect.character_add_costume(CT_JUMPMAN, nil, alt.desc, alt.credit, alt.color, alt.model, nil, nil, nil, nil)
+    _G.charSelect.character_add_costume(CT_JUMPMAN, nil, alt.desc, alt.credit, alt.color, alt.model, nil, alt.icon, nil, nil)
 end
 
 -- Table of Skins.
