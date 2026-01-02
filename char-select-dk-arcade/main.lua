@@ -1,5 +1,5 @@
 -- name: [CS] DK Arcade Pack
--- description: [CS] DK Arcade Pack v1.21\n\nThis mod adds Jumpman and Stanley from the Donkey Kong arcade videogame\ntrilogy into sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, AvereySmartGuy,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
+-- description: [CS] DK Arcade Pack v1.22\n\nThis mod adds Jumpman and Stanley from the Donkey Kong arcade videogame\ntrilogy into sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, AvereySmartGuy,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
 
 local TEXT_MOD_NAME = "DK Arcade Pack"
 
