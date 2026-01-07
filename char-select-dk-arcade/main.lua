@@ -1,5 +1,5 @@
 -- name: [CS] DK Arcade Pack
--- description: [CS] DK Arcade Pack v1.22\n\nThis mod adds Jumpman and Stanley from the Donkey Kong arcade videogame\ntrilogy into sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, AvereySmartGuy,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
+-- description: [CS] DK Arcade Pack v1.21\n\nThis mod adds Jumpman and Stanley from the Donkey Kong arcade videogame\ntrilogy into sm64coopdx!\n\n\\#f54e59\\Credits: \nAlexXRGames, ThaGurlTilly, \n\\#008800\\Squishy6094, AvereySmartGuy,\n\\#5ff54e\\BlueKazoo, ER1CK\n\\#ffffff\\& Brobgonal Second\n\n\\#ffffff\\Requires \\#00ff00\\Character Select \\#ff6868\\enabled!
 
 local TEXT_MOD_NAME = "DK Arcade Pack"
 
@@ -113,6 +113,17 @@ local PALETTES_JUMPMAN = {
        [SKIN]   = "edf1f2",
        [CAP]    = "d02d32",
        [EMBLEM] = "edf1f2"
+    },
+    {
+        name = "Jumpbro",
+        [PANTS]  = "00ff00",
+        [SHIRT]  = "4f5aff",
+        [GLOVES] = "ffffff",
+        [SHOES]  = "000000",
+        [HAIR]   = "000000",
+        [SKIN]   = "fec179",
+        [CAP]    = "00ff00",
+        [EMBLEM] = "dc9fff"
     },
     {
        name = "Arcade",
@@ -324,6 +335,61 @@ local PALETTES_STANLEY = {
        [SKIN]   = "fec179",
        [CAP]    = "ce0000",
        [EMBLEM] = "ce0000"
+   },
+   {
+       name = "Mario",
+       [PANTS]  = "0000b9",
+       [SHIRT]  = "ce0000",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "FF9e00",
+       [HAIR]   = "893e00",
+       [SKIN]   = "fec179",
+       [CAP]    = "ce0000",
+       [EMBLEM] = "ce0000"
+   },
+   {
+       name = "Luigi",
+       [PANTS]  = "0000b9",
+       [SHIRT]  = "00ce00",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "ff9e00",
+       [HAIR]   = "893e00",
+       [SKIN]   = "fec179",
+       [CAP]    = "00ce00",
+       [EMBLEM] = "00ce00"
+   },
+   {
+       name = "64. Spike",
+       [PANTS]  = "521008",
+       [SHIRT]  = "f7e68c",
+       [GLOVES] = "f8f8f8",
+       [SHOES]  = "242858",
+       [HAIR]   = "643200",
+       [SKIN]   = "fec179",
+       [CAP]    = "521008",
+       [EMBLEM] = "521008"
+   },
+   {
+       name = "Brawl. Spike",
+       [PANTS]  = "4d4d4d",
+       [SHIRT]  = "e2e2e2",
+       [GLOVES] = "e2e2e2",
+       [SHOES]  = "4d4d4d",
+       [HAIR]   = "4d4d4d",
+       [SKIN]   = "fec179",
+       [CAP]    = "e2e2e2",
+       [EMBLEM] = "e2e2e2"
+   },
+   {
+       name = "Cobalt",
+       [PANTS]  = "000000",
+       [SHIRT]  = "0000ff",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "721c0e",
+       [HAIR]   = "893e00",
+       [SKIN]   = "fec179",
+       [CAP]    = "0000ff",
+       [EMBLEM] = "ff0000"
    },
    {
        name = "Arcade",
