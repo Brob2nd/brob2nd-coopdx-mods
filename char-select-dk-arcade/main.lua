@@ -104,17 +104,6 @@ local PALETTES_JUMPMAN = {
         [EMBLEM] = "dc8fff"
     },
     {
-       name = "JP Artwork",
-       [PANTS]  = "d02d32",
-       [SHIRT]  = "0186c4",
-       [GLOVES] = "edf1f2",
-       [SHOES]  = "09130d",
-       [HAIR]   = "09130d",
-       [SKIN]   = "edf1f2",
-       [CAP]    = "d02d32",
-       [EMBLEM] = "edf1f2"
-    },
-    {
         name = "Jumpbro",
         [PANTS]  = "00ff00",
         [SHIRT]  = "4f5aff",
@@ -126,6 +115,50 @@ local PALETTES_JUMPMAN = {
         [EMBLEM] = "dc9fff"
     },
     {
+        name = "Altbrother",
+        [PANTS]  = "24c008",
+        [SHIRT]  = "373de3",
+        [GLOVES] = "ebebff",
+        [SHOES]  = "000000",
+        [HAIR]   = "000000",
+        [SKIN]   = "e99768",
+        [CAP]    = "24c008",
+        [EMBLEM] = "dc8fff"
+    },
+    {
+       name = "JP Artwork",
+       [PANTS]  = "d02d32",
+       [SHIRT]  = "0186c4",
+       [GLOVES] = "edf1f2",
+       [SHOES]  = "09130d",
+       [HAIR]   = "09130d",
+       [SKIN]   = "edf1f2",
+       [CAP]    = "d02d32",
+       [EMBLEM] = "edf1f2"
+    },
+    {
+       name = "Golf",
+       [PANTS]  = "ce3110",
+       [SHIRT]  = "423173",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "7b2100",
+       [HAIR]   = "845208",
+       [SKIN]   = "f7de94",
+       [CAP]    = "ce3110",
+       [EMBLEM] = "ffd621"
+    },
+    {
+       name = "Woods",
+       [PANTS]  = "a519ce",
+       [SHIRT]  = "ffffff",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "000000",
+       [HAIR]   = "845208",
+       [SKIN]   = "ffb529",
+       [CAP]    = "a519ce",
+       [EMBLEM] = "001000"
+    },
+    {
        name = "Arcade",
        [PANTS]  =  "ff0000",
        [SHIRT]  =  "0000aa",
@@ -134,6 +167,17 @@ local PALETTES_JUMPMAN = {
        [HAIR]   =  "0000aa",
        [SKIN]   =  "ffb855",
        [CAP]    =  "ff0000",
+       [EMBLEM] =  "ffb855"
+    },
+    {
+       name = "Arcade P2",
+       [PANTS]  =  "00ff00",
+       [SHIRT]  =  "0000aa",
+       [GLOVES] =  "ffb855",
+       [SHOES]  =  "0000aa",
+       [HAIR]   =  "0000aa",
+       [SKIN]   =  "ffb855",
+       [CAP]    =  "00ff00",
        [EMBLEM] =  "ffb855"
     },
     {
@@ -315,6 +359,50 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "ce0000"
    },
    {
+       name = "64. Spike",
+       [PANTS]  = "521008",
+       [SHIRT]  = "f7e68c",
+       [GLOVES] = "f8f8f8",
+       [SHOES]  = "242858",
+       [HAIR]   = "643200",
+       [SKIN]   = "fec179",
+       [CAP]    = "521008",
+       [EMBLEM] = "521008"
+   },
+   {
+       name = "Brawl. Spike",
+       [PANTS]  = "4d4d4d",
+       [SHIRT]  = "e2e2e2",
+       [GLOVES] = "e2e2e2",
+       [SHOES]  = "4d4d4d",
+       [HAIR]   = "4d4d4d",
+       [SKIN]   = "fec179",
+       [CAP]    = "e2e2e2",
+       [EMBLEM] = "e2e2e2"
+   },
+   {
+       name = "Donkey Kong",
+       [PANTS]  = "d8aa14",
+       [SHIRT]  = "ee6c15",
+       [GLOVES] = "d8aa14",
+       [SHOES]  = "d8aa14",
+       [HAIR]   = "ee6c15",
+       [SKIN]   = "d8aa14",
+       [CAP]    = "ee6c15",
+       [EMBLEM] = "d8aa14"
+   },
+   {
+       name = "Oogtar",
+       [PANTS]  = "6cd987",
+       [SHIRT]  = "fec179",
+       [GLOVES] = "a39073",
+       [SHOES]  = "fec179",
+       [HAIR]   = "eebb00",
+       [SKIN]   = "fec179",
+       [CAP]    = "6cd987",
+       [EMBLEM] = "eebb00"
+   },
+   {
        name = "Game & Watch",
        [PANTS]  = "e7d2a6",
        [SHIRT]  = "b13550",
@@ -324,7 +412,7 @@ local PALETTES_STANLEY = {
        [SKIN]   = "fec179",
        [CAP]    = "ffffff",
        [EMBLEM] = "ffffff"
-   }, 
+   },
    {
        name = "G&W (AD)",
        [PANTS]  = "0060ff",
@@ -335,6 +423,72 @@ local PALETTES_STANLEY = {
        [SKIN]   = "fec179",
        [CAP]    = "ce0000",
        [EMBLEM] = "ce0000"
+   },
+   {
+       name = "Happy Hour",
+       [PANTS]  = "000000",
+       [SHIRT]  = "82e100",
+       [GLOVES] = "fe0000",
+       [SHOES]  = "010000",
+       [HAIR]   = "000000",
+       [SKIN]   = "fc0309",
+       [CAP]    = "a9fe02",
+       [EMBLEM] = "01ff00"
+   },
+   {
+       name = "Fix-It",
+       [PANTS]  = "0000ff",
+       [SHIRT]  = "0088ff",
+       [GLOVES] = "aa7722",
+       [SHOES]  = "aa7722",
+       [HAIR]   = "9d743c",
+       [SKIN]   = "fec179",
+       [CAP]    = "0088ff",
+       [EMBLEM] = "ffff00"
+   },
+   {
+       name = "Sponge",
+       [PANTS]  = "425aa7",
+       [SHIRT]  = "f38e17",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "6f3a20",
+       [HAIR]   = "84492c",
+       [SKIN]   = "fec179",
+       [CAP]    = "f38e17",
+       [EMBLEM] = "f38e17"
+   },
+   {
+       name = "Karami",
+       [PANTS]  = "ffd400",
+       [SHIRT]  = "404040",
+       [GLOVES] = "ffd400",
+       [SHOES]  = "404040",
+       [HAIR]   = "404040",
+       [SKIN]   = "fec179",
+       [CAP]    = "404040",
+       [EMBLEM] = "ffd400"
+   },
+   {
+       name = "Red R",
+       [PANTS]  = "ff9235",
+       [SHIRT]  = "e61b38",
+       [GLOVES] = "282660",
+       [SHOES]  = "1a183c",
+       [HAIR]   = "2a1b18",
+       [SKIN]   = "fec179",
+       [CAP]    = "404040",
+       [EMBLEM] = "ffd400"
+   },
+   {
+       name = "Miasma",
+       [PANTS]  = "201020",
+       [SHIRT]  = "512191",
+       [GLOVES] = "a584da",
+       [SHOES]  = "57456e",
+       [HAIR]   = "4b3c63",
+       [SKIN]   = "a584da",
+       [CAP]    = "512191",
+       [EMBLEM] = "201020"
    },
    {
        name = "Mario",
@@ -359,28 +513,6 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "00ce00"
    },
    {
-       name = "64. Spike",
-       [PANTS]  = "521008",
-       [SHIRT]  = "f7e68c",
-       [GLOVES] = "f8f8f8",
-       [SHOES]  = "242858",
-       [HAIR]   = "643200",
-       [SKIN]   = "fec179",
-       [CAP]    = "521008",
-       [EMBLEM] = "521008"
-   },
-   {
-       name = "Brawl. Spike",
-       [PANTS]  = "4d4d4d",
-       [SHIRT]  = "e2e2e2",
-       [GLOVES] = "e2e2e2",
-       [SHOES]  = "4d4d4d",
-       [HAIR]   = "4d4d4d",
-       [SKIN]   = "fec179",
-       [CAP]    = "e2e2e2",
-       [EMBLEM] = "e2e2e2"
-   },
-   {
        name = "Cobalt",
        [PANTS]  = "000000",
        [SHIRT]  = "0000ff",
@@ -402,6 +534,7 @@ local PALETTES_STANLEY = {
        [CAP]    = "eb0809",
        [EMBLEM] = "eb0809"
    },
+
    {
        name = "Super Sprayer",
        [PANTS]  = "eb0709",
