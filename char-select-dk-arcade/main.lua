@@ -152,12 +152,111 @@ local PALETTES_JUMPMAN = {
        [PANTS]  = "a519ce",
        [SHIRT]  = "ffffff",
        [GLOVES] = "ffffff",
-       [SHOES]  = "000000",
+       [SHOES]  = "001000",
        [HAIR]   = "845208",
        [SKIN]   = "ffb529",
        [CAP]    = "a519ce",
-       [EMBLEM] = "001000"
+       [EMBLEM] = "a519ce"
     },
+    {
+       name = "64. Spike",
+       [PANTS]  = "521008",
+       [SHIRT]  = "f7e68c",
+       [GLOVES] = "f8f8f8",
+       [SHOES]  = "242858",
+       [HAIR]   = "643200",
+       [SKIN]   = "fec179",
+       [CAP]    = "521008",
+       [EMBLEM] = "f7e68c"
+   },
+    {
+       name = "Brawl. Spike",
+       [PANTS]  = "4d4d4d",
+       [SHIRT]  = "e2e2e2",
+       [GLOVES] = "e2e2e2",
+       [SHOES]  = "4d4d4d",
+       [HAIR]   = "4d4d4d",
+       [SKIN]   = "fec179",
+       [CAP]    = "e2e2e2",
+       [EMBLEM] = "e2e2e2"
+   },
+   {
+       name = "Donkey Kong",
+       [PANTS]  = "d8aa14",
+       [SHIRT]  = "ee6c15",
+       [GLOVES] = "d8aa14",
+       [SHOES]  = "d8aa14",
+       [HAIR]   = "ee6c15",
+       [SKIN]   = "d8aa14",
+       [CAP]    = "ee6c15",
+       [EMBLEM] = "d8aa14"
+   },
+   {
+       name = "Oogtar",
+       [PANTS]  = "6cd987",
+       [SHIRT]  = "fec179",
+       [GLOVES] = "a39073",
+       [SHOES]  = "fec179",
+       [HAIR]   = "eebb00",
+       [SKIN]   = "fec179",
+       [CAP]    = "6cd987",
+       [EMBLEM] = "eebb00"
+   },
+   {
+       name = "Happy Hour",
+       [PANTS]  = "000000",
+       [SHIRT]  = "82e100",
+       [GLOVES] = "fe0000",
+       [SHOES]  = "010000",
+       [HAIR]   = "000000",
+       [SKIN]   = "fc0309",
+       [CAP]    = "a9fe02",
+       [EMBLEM] = "01ff00"
+   },
+   {
+       name = "Sponge",
+       [PANTS]  = "425aa7",
+       [SHIRT]  = "f38e17",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "6f3a20",
+       [HAIR]   = "84492c",
+       [SKIN]   = "fec179",
+       [CAP]    = "f38e17",
+       [EMBLEM] = "f38e17"
+   },
+   {
+       name = "Karami",
+       [PANTS]  = "ffd400",
+       [SHIRT]  = "404040",
+       [GLOVES] = "ffd400",
+       [SHOES]  = "404040",
+       [HAIR]   = "404040",
+       [SKIN]   = "fec179",
+       [CAP]    = "404040",
+       [EMBLEM] = "ffd400"
+   },
+   {
+       name = "Red R",
+       [PANTS]  = "ff9235",
+       [SHIRT]  = "e61b38",
+       [GLOVES] = "282660",
+       [SHOES]  = "1a183c",
+       [HAIR]   = "2a1b18",
+       [SKIN]   = "fec179",
+       [CAP]    = "404040",
+       [EMBLEM] = "ffd400"
+   },
+   {
+       name = "Miasma",
+       [PANTS]  = "201020",
+       [SHIRT]  = "512191",
+       [GLOVES] = "a584da",
+       [SHOES]  = "57456e",
+       [HAIR]   = "4b3c63",
+       [SKIN]   = "a584da",
+       [CAP]    = "512191",
+       [EMBLEM] = "57456e"
+   },
     {
        name = "Arcade",
        [PANTS]  =  "ff0000",
@@ -323,6 +422,39 @@ local PALETTES_JUMPMAN = {
        [CAP]    =  "e44020",
        [EMBLEM] =  "ffb8ec"
     },
+    {
+       name = "DK94",
+       [PANTS]  =  "000000",
+       [SHIRT]  =  "fffbff",
+       [GLOVES] =  "adaaad",
+       [SHOES]  =  "adaaad",
+       [HAIR]   =  "000000",
+       [SKIN]   =  "adaaad",
+       [CAP]    =  "fffbff",
+       [EMBLEM] =  "adaaad"
+    },
+    {
+       name = "DK94 (SGB)",
+       [PANTS]  =  "210029",
+       [SHIRT]  =  "ffffff",
+       [GLOVES] =  "ffb542",
+       [SHOES]  =  "ffb542",
+       [HAIR]   =  "210029",
+       [SKIN]   =  "ffb542",
+       [CAP]    =  "ffffff",
+       [EMBLEM] =  "ffb542"
+    },
+    {
+       name = "Dai Gyakushu",
+       [PANTS]  = "ff0000",
+       [SHIRT]  = "0000ff",
+       [GLOVES] = "ffff00",
+       [SHOES]  = "ffff00",
+       [HAIR]   = "ff0000",
+       [SKIN]   = "ffff00",
+       [CAP]    = "ff0000",
+       [EMBLEM] = "ffff00"
+   },
 }
 local PALETTES_STANLEY = {
     {
@@ -524,6 +656,17 @@ local PALETTES_STANLEY = {
        [EMBLEM] = "ff0000"
    },
    {
+       name = "Woods",
+       [PANTS]  = "a519ce",
+       [SHIRT]  = "ffffff",
+       [GLOVES] = "ffffff",
+       [SHOES]  = "001000",
+       [HAIR]   = "845208",
+       [SKIN]   = "ffb529",
+       [CAP]    = "a519ce",
+       [EMBLEM] = "a519ce"
+    },
+   {
        name = "Arcade",
        [PANTS]  = "eb0809",
        [SHIRT]  = "020161",
@@ -577,8 +720,30 @@ local PALETTES_STANLEY = {
        [HAIR]   = "ff0000",
        [SKIN]   = "ffff00",
        [CAP]    = "ff0000",
-       [EMBLEM] = "ff0000"
-   }
+       [EMBLEM] = "ffff00"
+   },
+   {
+       name = "DK94",
+       [PANTS]  =  "000000",
+       [SHIRT]  =  "fffbff",
+       [GLOVES] =  "adaaad",
+       [SHOES]  =  "adaaad",
+       [HAIR]   =  "000000",
+       [SKIN]   =  "adaaad",
+       [CAP]    =  "fffbff",
+       [EMBLEM] =  "adaaad"
+    },
+    {
+       name = "DK94 (SGB)",
+       [PANTS]  =  "210029",
+       [SHIRT]  =  "ffffff",
+       [GLOVES] =  "ffb542",
+       [SHOES]  =  "ffb542",
+       [HAIR]   =  "210029",
+       [SKIN]   =  "ffb542",
+       [CAP]    =  "ffffff",
+       [EMBLEM] =  "ffb542"
+    },
 }
 
 local CT_JUMPMAN = _G.charSelect.character_add("Jumpman", {"Jumpman is a plumber from New York,", "which first appeared in the videogame 'Donkey Kong'.", "", "One day, a lady called 'Pauline' got kidnapped", "by a monkey called 'Donkey Kong', and he has taken", "her to a dangerous construction site, and now,", "Jumpman has to climb up the dangerous construction", "site to defeat Donkey Kong and rescue her!"}, "AlexXRGames, Brob2nd & TheGreatMario64", { r = 255, g = 0, b = 80 }, E_MODEL_JUMPMAN, CT_MARIO, TEX_JUMPMAN)
