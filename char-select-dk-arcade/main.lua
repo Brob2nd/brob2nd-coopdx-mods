@@ -542,8 +542,8 @@ local PALETTES_STANLEY = {
        [SHOES]  = "714c42",
        [HAIR]   = "730600",
        [SKIN]   = "fec179",
-       [CAP]    = "ffffff",
-       [EMBLEM] = "ffffff"
+       [CAP]    = "4d4d4d",
+       [EMBLEM] = "4d4d4d"
    },
    {
        name = "G&W (AD)",
@@ -553,8 +553,8 @@ local PALETTES_STANLEY = {
        [SHOES]  = "721c0e",
        [HAIR]   = "893e00",
        [SKIN]   = "fec179",
-       [CAP]    = "ce0000",
-       [EMBLEM] = "ce0000"
+       [CAP]    = "ffa900",
+       [EMBLEM] = "ffa900"
    },
    {
        name = "Happy Hour",
