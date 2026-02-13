@@ -107,7 +107,7 @@ Boshi = {
                 [EMBLEM] = "ff3000",
             },
             {
-                name     = "Fire Dragon",
+                name     = "Dragon",
                 [PANTS]  = '00d000',
                 [SHIRT]  = 'c00000',
                 [GLOVES] = 'c0c0c0',
@@ -116,83 +116,6 @@ Boshi = {
                 [SKIN]   = 'ffce39',
                 [CAP]    = 'ff0000',
                 [EMBLEM] = '00c000'
-            },
-            {
-                name     = "Cool Dragon",
-                [PANTS]  = 'fc4f05',
-                [SHIRT]  = '5527b9',
-                [GLOVES] = 'c0c0c0',
-                [SHOES]  = 'dc4d05',
-                [HAIR]   = 'dc4d05',
-                [SKIN]   = 'ffce39',
-                [CAP]    = '5527b9',
-                [EMBLEM] = 'dc4d05'
-            },
-            {
-                name     = "Green Faker",
-                [PANTS]  = 'ff0000',
-                [SHIRT]  = '00ff00',
-                [GLOVES] = 'ffffff',
-                [SHOES]  = 'ff0000',
-                [HAIR]   = 'ff0000',
-                [SKIN]   = 'ffde39',
-                [CAP]    = '00ff00',
-                [EMBLEM] = 'ff0000'
-            },
-            {
-                name     = "Red Faker",
-                [PANTS]  = 'ffff00',
-                [SHIRT]  = 'fe0000',
-                [GLOVES] = 'ffffff',
-                [SHOES]  = '0000ff',
-                [HAIR]   = 'ff6800',
-                [SKIN]   = 'ffde39',
-                [CAP]    = 'ff0000',
-                [EMBLEM] = 'ff0000'
-            },
-            {
-                name     = "Blue Faker",
-                [PANTS]  = '004098',
-                [SHIRT]  = '004098',
-                [GLOVES] = 'ffffff',
-                [SHOES]  = 'cb2998',
-                [HAIR]   = 'ff6800',
-                [SKIN]   = 'fede39',
-                [CAP]    = '004098',
-                [EMBLEM] = 'ff0000'
-            },
-            {
-                name     = "Yellow Faker",
-                [PANTS]  = 'ffff00',
-                [SHIRT]  = 'ffff00',
-                [GLOVES] = 'ffffff',
-                [SHOES]  = '00ff00',
-                [HAIR]   = 'ff8600',
-                [SKIN]   = 'fede39',
-                [CAP]    = 'ffff00',
-                [EMBLEM] = 'ff0000'
-            },
-            {
-                name     = "His Purpose",
-                [PANTS]  = 'a82e57',
-                [SHIRT]  = 'c38b39',
-                [GLOVES] = 'ffffff',
-                [SHOES]  = '1d5847',
-                [HAIR]   = '735300',
-                [SKIN]   = '735300',
-                [CAP]    = 'c38b39',
-                [EMBLEM] = '244e99'
-            },
-            {
-                name     = "Old",
-                [PANTS]  = "89000f",
-                [SHIRT]  = "2363b5",
-                [GLOVES] = "ffffff",
-                [SHOES]  = "ff0000",
-                [HAIR]   = "ff0000",
-                [SKIN]   = "ff0000",
-                [CAP]    = "2363b5",
-                [EMBLEM] = "ff0000"
             },
         },
         voices = {
