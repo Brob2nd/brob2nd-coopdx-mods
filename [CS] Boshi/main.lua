@@ -214,6 +214,7 @@ local BoshiCredits = {
         "xLuigiGamerx,Moveset, Coder",
         "Brob2nd,Modified Moveset",
         "Baconator2558,Tweaks and Help",
+        "JerThePear,Ground Pound Jump",
     },
 }
 

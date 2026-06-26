@@ -36,9 +36,9 @@ function act_flutter(m)
 
     smlua_anim_util_set_animation(m.marioObj, BOSHI_ANIM_FLUTTER) -- Sets the animation
 
-    m.marioBodyState.eyeState = MARIO_EYES_CLOSED                 -- Eye State
-    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.5, 6, 6)   -- Height increases faster as the 1 second passes
-    m.marioObj.header.gfx.animInfo.animAccel = 32768 * 3        -- Anim Speed
+    m.marioBodyState.eyeState = MARIO_EYES_CLOSED              -- Eye State
+    m.vel.y = approach_f32(m.vel.y, m.actionTimer / 1.5, 6, 6) -- Height increases faster as the 1.1 secondS passes
+    m.marioObj.header.gfx.animInfo.animAccel = 32768 * 3       -- Anim Speed
 
     m.actionTimer = m.actionTimer + 1
     return false
@@ -71,6 +71,11 @@ end
 function boshi_update(m)
     if m.prevAction & ACT_FLAG_AIR == 0 and m.action & ACT_FLAG_AIR ~= 0 and flutterActs[m.action] and m.controller.buttonDown & A_BUTTON ~= 0 and m.vel.y < 0 then
         set_mario_action(m, ACT_FLUTTER, 0)
+    end
+    -- Ground Pound Jump
+    if m.action == ACT_GROUND_POUND_LAND and (m.input & INPUT_A_PRESSED) ~= 0 then
+        set_mario_action(m, ACT_TRIPLE_JUMP, 0)
+        m.vel.y = m.vel.y - 4
     end
 end
 
