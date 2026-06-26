@@ -63,6 +63,17 @@ Boshi = {
                 [EMBLEM] = { r = 0xFF, g = 0x00, b = 0x00 },
             },
             {
+                name     = "Retro",
+                [PANTS]  = "740515",
+                [SHIRT]  = "3a3baf",
+                [GLOVES] = "f8f8f8",
+                [SHOES]  = "740515",
+                [HAIR]   = "740515",
+                [SKIN]   = "740515",
+                [CAP]    = "3a3baf",
+                [EMBLEM] = "740515",
+            },
+            {
                 name     = "Toy",
                 [PANTS]  = "fa951e",
                 [SHIRT]  = "1833d8",
@@ -118,15 +129,15 @@ Boshi = {
                 [EMBLEM] = 'ff0000'
             },
             {
-                name     = "Retro",
-                [PANTS]  = "740515",
-                [SHIRT]  = "3a3baf",
-                [GLOVES] = "f8f8f8",
-                [SHOES]  = "740515",
-                [HAIR]   = "740515",
-                [SKIN]   = "740515",
-                [CAP]    = "3a3baf",
-                [EMBLEM] = "740515",
+                name     = "Old",
+                [PANTS]  = "89000f",
+                [SHIRT]  = "2363b5",
+                [GLOVES] = "ffffff",
+                [SHOES]  = "ff0000",
+                [HAIR]   = "ff0000",
+                [SKIN]   = "ff0000",
+                [CAP]    = "2363b5",
+                [EMBLEM] = "ff0000"
             },
         },
         voices = {
